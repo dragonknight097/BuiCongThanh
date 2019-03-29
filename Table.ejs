@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Table Node</title>
+  
+      <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+  <form method = "GET" action = "/index/table">
+	<table>
+		<thead>
+			<tr>
+				<th> <span> NODE 1 </span> </th>
+				<th>ID</th>
+				<th>Nhiệt độ</th>
+				<th>Độ Ẩm</th>
+				<th>PH</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if (data && data.rows) {%>
+				<% for (var i = 0; i < data.rows.length; i++){%>
+			<tr>
+				<td> </td>
+				<td><%= data.rows[i].idblog%></td>
+				<td><%= data.rows[i].nhietdo%></td>
+				<td><%= data.rows[i].doam%></td>
+				<td><%= data.rows[i].ph%></td>
+			</tr>
+				<%}%>
+			<%}%>
+		</tbody>
+		<thead>
+			<tr>
+				<th> <span> NODE 2 </span> </th>
+				<th>ID</th>
+				<th>Nồng độ Oxy</th>
+				<th>Độ ẩm không khí</th>
+				<th>Độ ẩm đất</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% if (data && data.row) {%>
+				<% for (var i = 0; i < data.row.length; i++){%>
+			<tr>
+				<td> </td>
+				<td><%= data.row[i].idblog%></td>
+				<td><%= data.row[i].nongdo_oxy%></td>
+				<td><%= data.row[i].khong_khi%></td>
+				<td><%= data.row[i].doam_dat%></td>
+			</tr>
+				<%}%>
+			<%}%>
+		</tbody> 
+	</table>
+	</form>
+</div>
+
+</body>
+
+</html>
